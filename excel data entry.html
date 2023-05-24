@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Nhập dữ liệu online</title>
+</head>
+<body>
+  <h1>Nhập dữ liệu</h1>
+
+  <form id="myForm">
+    <div>
+      <label for="nameInput">Tên:</label>
+      <input type="text" id="nameInput" name="nameInput" required>
+    </div>
+    <div>
+      <label for="ageInput">Tuổi:</label>
+      <input type="number" id="ageInput" name="ageInput" required>
+    </div>
+    <div>
+      <label for="emailInput">Email:</label>
+      <input type="email" id="emailInput" name="emailInput" required>
+    </div>
+    <div>
+      <label for="phoneInput">Số điện thoại:</label>
+      <input type="tel" id="phoneInput" name="phoneInput" required>
+    </div>
+    <button type="submit">Gửi</button>
+  </form>
+
+  <script>
+    document.getElementById("myForm").addEventListener("submit", function(event) {
+      event.preventDefault(); // Ngăn chặn form submit mặc định
+
+      var formData = new FormData(this); // Lấy dữ liệu từ form
+      var name = formData.get("nameInput"); // Lấy giá trị của trường "nameInput"
+      var age = formData.get("ageInput"); // Lấy giá trị của trường "ageInput"
+      var email = formData.get("emailInput"); // Lấy giá trị của trường "emailInput"
+      var phone = formData.get("phoneInput"); // Lấy giá trị của trường "phoneInput"
+
+      // Gửi dữ liệu đến máy chủ hoặc xử lý dữ liệu theo nhu cầu của bạn
+      // ...
+
+      // Xóa nội dung của form sau khi gửi thành công
+      this.reset();
+    });
+  </script>
+</body>
+</html>
